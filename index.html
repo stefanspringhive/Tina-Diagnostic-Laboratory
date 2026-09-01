@@ -480,6 +480,165 @@
   }
   .hours-card .yellow-tag svg{filter:drop-shadow(0 1px 1px rgba(0,0,0,.2));}
 
+  /* ---------- Appointment / Booking form ---------- */
+  .appointment{background:var(--paper);}
+  .appt-grid{
+    display:grid;
+    grid-template-columns:.95fr 1.15fr;
+    gap:0;
+    border-radius:26px;
+    overflow:hidden;
+    box-shadow:0 30px 70px -30px rgba(23,51,25,.35);
+    border:1px solid var(--line);
+  }
+  .appt-photo{
+    position:relative;
+    min-height:100%;
+    background:var(--green-dark);
+  }
+  .appt-photo img{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    object-fit:cover;
+    object-position:center;
+  }
+  .appt-photo-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(190deg, rgba(19,46,22,.15) 0%, rgba(19,46,22,.35) 55%, rgba(19,46,22,.92) 100%);
+  }
+  .appt-quote{
+    position:absolute;
+    left:28px;right:28px;bottom:28px;
+    z-index:2;
+    color:#fff;
+  }
+  .appt-quote p{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:19px;
+    line-height:1.4;
+    font-weight:600;
+    text-shadow:0 2px 14px rgba(0,0,0,.35);
+  }
+  .appt-quote span{
+    display:block;
+    margin-top:10px;
+    font-size:13px;
+    font-weight:600;
+    color:rgba(255,255,255,.75);
+  }
+  .appt-photo-badge{
+    position:absolute;
+    top:24px;left:24px;
+    z-index:2;
+    display:flex;align-items:center;gap:12px;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.35);
+    backdrop-filter:blur(8px);
+    padding:12px 16px;
+    border-radius:14px;
+    color:#fff;
+  }
+  .appt-photo-badge .mini-badge{width:38px;height:38px;border-radius:11px;}
+  .appt-photo-badge svg{width:19px;height:19px;}
+  .appt-photo-badge strong{display:block;font-size:14.5px;font-family:'Space Grotesk',sans-serif;}
+  .appt-photo-badge small{font-size:11.5px;color:rgba(255,255,255,.8);}
+
+  .appt-form-card{
+    background:#fff;
+    padding:52px 48px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .appt-form-card .eyebrow{margin-bottom:14px;}
+  .appt-form-card h2{font-size:clamp(24px,2.6vw,30px);margin-bottom:10px;}
+  .appt-lede{font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:28px;max-width:440px;}
+
+  .form-row{margin-bottom:18px;}
+  .form-row.two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-bottom:0;
+  }
+  .form-row.two-col > div{margin-bottom:18px;}
+  .form-row label{
+    display:block;
+    font-size:13.5px;
+    font-weight:700;
+    color:var(--ink);
+    margin-bottom:7px;
+  }
+  .form-row label .opt{font-weight:500;color:var(--ink-soft);font-size:12.5px;}
+  .form-row input,
+  .form-row select,
+  .form-row textarea{
+    width:100%;
+    font-family:'Manrope',sans-serif;
+    font-size:14.5px;
+    color:var(--ink);
+    background:var(--paper);
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    padding:12px 14px;
+    transition:border-color .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .form-row input::placeholder,
+  .form-row textarea::placeholder{color:#9BAA9C;}
+  .form-row input:focus,
+  .form-row select:focus,
+  .form-row textarea:focus{
+    outline:none;
+    border-color:var(--green);
+    background:#fff;
+    box-shadow:0 0 0 4px rgba(45,122,51,.14);
+  }
+  .form-row select{
+    appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234C5C4D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 14px center;
+    background-size:18px;
+    padding-right:38px;
+  }
+  .form-row textarea{resize:vertical;min-height:76px;}
+
+  .full-width{width:100%;margin-top:6px;}
+  .form-note{
+    margin-top:16px;
+    font-size:13px;
+    color:var(--ink-soft);
+    text-align:center;
+  }
+  .form-note a{color:var(--green-dark);font-weight:700;}
+
+  .form-success{
+    text-align:center;
+    padding:20px 0;
+  }
+  .form-success .success-icon{
+    width:60px;height:60px;
+    margin:0 auto 18px;
+    border-radius:50%;
+    background:linear-gradient(155deg,#3a8f40 0%,var(--green-dark) 100%);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 20px -8px rgba(33,88,38,.55), inset 0 2px 2px rgba(255,255,255,.35);
+  }
+  .form-success .success-icon svg{width:28px;height:28px;}
+  .form-success h3{font-size:21px;margin-bottom:8px;}
+  .form-success p{font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin-bottom:20px;}
+
+  @media (max-width:960px){
+    .appt-grid{grid-template-columns:1fr;border-radius:22px;}
+    .appt-photo{min-height:260px;}
+    .appt-form-card{padding:36px 26px;}
+  }
+  @media (max-width:520px){
+    .form-row.two-col{grid-template-columns:1fr;gap:0;}
+    .appt-form-card{padding:30px 20px;}
+    .appt-quote p{font-size:16.5px;}
+  }
+
   /* ---------- CTA banner ---------- */
   .cta-band{
     background:linear-gradient(120deg, var(--blue) 0%, var(--blue-dark) 100%);
@@ -575,6 +734,7 @@
       <a href="#services">Services</a>
       <a href="#why">Why Us</a>
       <a href="#visit">Hours &amp; Location</a>
+      <a href="#appointment">Book a Visit</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -787,6 +947,86 @@
   </div>
 </section>
 
+<!-- Appointment / Booking Form -->
+<section class="appointment" id="appointment">
+  <div class="wrap">
+    <div class="appt-grid">
+      <div class="appt-photo">
+        <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1200&q=75" alt="Nurse checking a patient's blood pressure at the clinic">
+        <div class="appt-photo-overlay"></div>
+        <div class="appt-quote">
+          <p>“Friendly staff, and my results were ready the same afternoon.”</p>
+          <span>— A patient from Tuburan</span>
+        </div>
+        <div class="appt-photo-badge">
+          <span class="mini-badge mini-badge-yellow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          </span>
+          <div><strong>Same-Day Results</strong><small>on most standard tests</small></div>
+        </div>
+      </div>
+
+      <div class="appt-form-card">
+        <span class="eyebrow">BOOK A VISIT</span>
+        <h2>Schedule your lab test</h2>
+        <p class="appt-lede">Send us your details and preferred schedule — our staff will call or text to confirm your appointment.</p>
+
+        <form id="apptForm" novalidate>
+          <div class="form-row">
+            <label for="fName">Full Name</label>
+            <input type="text" id="fName" name="name" placeholder="Juan Dela Cruz" required>
+          </div>
+
+          <div class="form-row two-col">
+            <div>
+              <label for="fPhone">Phone Number</label>
+              <input type="tel" id="fPhone" name="phone" placeholder="09XX XXX XXXX" required>
+            </div>
+            <div>
+              <label for="fDate">Preferred Date</label>
+              <input type="date" id="fDate" name="date">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="fService">Test / Service Needed</label>
+            <select id="fService" name="service">
+              <option value="">Select a service</option>
+              <option>CBC</option>
+              <option>Urinalysis</option>
+              <option>Fasting Blood Sugar (FBS)</option>
+              <option>Lipid Profile</option>
+              <option>Pregnancy Test</option>
+              <option>Drug Test</option>
+              <option>ECG</option>
+              <option>Medical / Physical Exam</option>
+              <option>X-Ray Imaging</option>
+              <option>Other / Not sure</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="fMsg">Message <span class="opt">(optional)</span></label>
+            <textarea id="fMsg" name="message" rows="3" placeholder="Anything we should know before your visit?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary full-width">Request Appointment</button>
+          <p class="form-note">Prefer to talk to someone? Call <a href="tel:+639235184741">0923 518 4741</a></p>
+        </form>
+
+        <div class="form-success" id="formSuccess" hidden>
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          </div>
+          <h3>Request received!</h3>
+          <p>Thank you, <span id="successName">friend</span>. Our staff will contact you shortly to confirm your appointment.</p>
+          <button type="button" class="btn btn-outline" id="formReset">Book another visit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA band -->
 <section class="cta-band" id="contact">
   <div class="wrap">
@@ -854,6 +1094,32 @@
     nav.classList.toggle('open');
   });
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+  const apptForm = document.getElementById('apptForm');
+  const formSuccess = document.getElementById('formSuccess');
+  const successName = document.getElementById('successName');
+  const formReset = document.getElementById('formReset');
+
+  if (apptForm) {
+    apptForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!apptForm.checkValidity()) {
+        apptForm.reportValidity();
+        return;
+      }
+      const name = document.getElementById('fName').value.trim();
+      successName.textContent = name || 'friend';
+      apptForm.hidden = true;
+      formSuccess.hidden = false;
+    });
+  }
+  if (formReset) {
+    formReset.addEventListener('click', () => {
+      apptForm.reset();
+      apptForm.hidden = false;
+      formSuccess.hidden = true;
+    });
+  }
 </script>
 
 </body>
