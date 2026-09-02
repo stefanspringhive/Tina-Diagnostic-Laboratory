@@ -480,12 +480,26 @@
   .info-row h4{font-size:15.5px;margin-bottom:4px;color:var(--ink);}
   .info-row p{font-size:14px;color:var(--ink-soft);line-height:1.55;}
   .hours-card{
-    background:var(--green);
+    position:relative;
+    isolation:isolate;
+    background:
+      linear-gradient(165deg, rgba(45,122,51,.92) 0%, rgba(33,88,38,.94) 55%, rgba(21,55,30,.96) 100%),
+      url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1000&q=70') center/cover no-repeat;
     border-radius:18px;
     padding:32px;
     color:#fff;
     display:flex;flex-direction:column;justify-content:center;
+    box-shadow:0 22px 46px -20px rgba(21,55,30,.55);
+    overflow:hidden;
   }
+  .hours-card::before{
+    content:"";
+    position:absolute;inset:0;
+    z-index:0;
+    background:radial-gradient(420px 260px at 100% 0%, rgba(248,220,45,.22), transparent 65%);
+    pointer-events:none;
+  }
+  .hours-card > *{position:relative;z-index:1;}
   .hours-card h3{color:#fff;font-size:21px;margin-bottom:22px;}
   .hours-card ul li{
     display:flex;justify-content:space-between;
