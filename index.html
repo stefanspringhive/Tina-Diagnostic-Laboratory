@@ -23,6 +23,31 @@
     --white:#ffffff;
   }
   *{box-sizing:border-box;}
+
+  /* ---------- Scroll reveal animations ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(32px);
+    transition:opacity .75s cubic-bezier(.16,.8,.3,1), transform .75s cubic-bezier(.16,.8,.3,1);
+    will-change:opacity, transform;
+  }
+  .reveal.in-view{
+    opacity:1;
+    transform:translateY(0);
+  }
+  .reveal-left{transform:translateX(-40px);}
+  .reveal-left.in-view{transform:translateX(0);}
+  .reveal-right{transform:translateX(40px);}
+  .reveal-right.in-view{transform:translateX(0);}
+  .reveal-scale{transform:translateY(20px) scale(.94);}
+  .reveal-scale.in-view{transform:translateY(0) scale(1);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal-left, .reveal-right, .reveal-scale{
+      opacity:1 !important;
+      transform:none !important;
+      transition:none !important;
+    }
+  }
   html{scroll-behavior:smooth;}
   body{
     margin:0;
@@ -810,14 +835,14 @@
 <!-- Services -->
 <section class="services" id="services">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">LABORATORY SERVICES</span>
       <h2>Everything tested under one roof</h2>
       <p>From routine blood work to full-body X-ray imaging, our panel covers the tests most requested for check-ups, pre-employment, and specialist referrals.</p>
     </div>
 
     <div class="cat-grid">
-      <div class="cat-card c1">
+      <div class="cat-card c1 reveal" style="transition-delay:0s">
         <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 2h7M9 2v6.5L4.5 17a2.6 2.6 0 0 0 2.3 3.8h10.4a2.6 2.6 0 0 0 2.3-3.8L15 8.5V2"/><path d="M6.5 15h11"/></svg>
         </div>
@@ -828,7 +853,7 @@
         </div>
       </div>
 
-      <div class="cat-card c2">
+      <div class="cat-card c2 reveal" style="transition-delay:.08s">
         <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
@@ -839,7 +864,7 @@
         </div>
       </div>
 
-      <div class="cat-card c3">
+      <div class="cat-card c3 reveal" style="transition-delay:.16s">
         <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.5-1.5 4.5 0 6s4.5 1.5 6 0l9-9c1.5-1.5 1.5-4.5 0-6s-4.5-1.5-6 0l-9 9z"/><path d="M14.5 4.5l5 5"/></svg>
         </div>
@@ -850,7 +875,7 @@
         </div>
       </div>
 
-      <div class="cat-card c4">
+      <div class="cat-card c4 reveal" style="transition-delay:.24s">
         <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
         </div>
@@ -862,7 +887,7 @@
       </div>
     </div>
 
-    <div class="services-note">
+    <div class="services-note reveal">
       <span class="mini-badge mini-badge-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span>
       <p><strong>Not sure which test you need?</strong> Call us at 0923 518 4741 and our staff will guide you — most results are released the same day.</p>
     </div>
@@ -872,28 +897,28 @@
 <!-- Why choose us -->
 <section class="why" id="why">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow" style="background:rgba(248,220,45,.18);color:var(--yellow);">WHY PATIENTS CHOOSE US</span>
       <h2>Neighborhood lab, professional standards</h2>
       <p>We built Tina Diagnostic Laboratory to make quality testing accessible without the long lines or long waits of hospital labs.</p>
     </div>
     <div class="why-grid">
-      <div class="why-card">
+      <div class="why-card reveal" style="transition-delay:0s">
         <div class="num"><span>01</span></div>
         <h4>Open every day</h4>
         <p>Extended hours Monday to Saturday and Sunday service, so testing fits your schedule.</p>
       </div>
-      <div class="why-card">
+      <div class="why-card reveal" style="transition-delay:.08s">
         <div class="num"><span>02</span></div>
         <h4>Wide test menu</h4>
         <p>Blood chemistry, hormone panels, imaging, and specialty tests all in one facility.</p>
       </div>
-      <div class="why-card">
+      <div class="why-card reveal" style="transition-delay:.16s">
         <div class="num"><span>03</span></div>
         <h4>Fast, accurate results</h4>
         <p>Same-day processing on most standard laboratory and imaging requests.</p>
       </div>
-      <div class="why-card">
+      <div class="why-card reveal" style="transition-delay:.24s">
         <div class="num"><span>04</span></div>
         <h4>Easy to find</h4>
         <p>Located along Casia St., Brgy. 08, Tuburan — just a short walk from CTU.</p>
@@ -905,26 +930,26 @@
 <!-- Visit / Hours -->
 <section class="visit" id="visit">
   <div class="wrap">
-    <div class="visit-info">
+    <div class="visit-info reveal reveal-left">
       <span class="eyebrow">VISIT THE LAB</span>
       <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:6px;">Find us in Tuburan</h2>
       <p style="color:var(--ink-soft);font-size:15.5px;margin-bottom:8px;">Drop by for walk-in testing or call ahead to check requirements for your test.</p>
 
-      <div class="info-row">
+      <div class="info-row reveal" style="transition-delay:0s">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div>
           <h4>Address</h4>
           <p>Casia St., Brgy. 08, Tuburan, Cebu (near CTU)</p>
         </div>
       </div>
-      <div class="info-row blue">
+      <div class="info-row blue reveal" style="transition-delay:.08s">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg></div>
         <div>
           <h4>Phone</h4>
           <p><a href="tel:+639235184741">0923 518 4741</a> — call for test requirements or inquiries</p>
         </div>
       </div>
-      <div class="info-row">
+      <div class="info-row reveal" style="transition-delay:.16s">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
         <div>
           <h4>Requirements</h4>
@@ -933,7 +958,7 @@
       </div>
     </div>
 
-    <div class="hours-card">
+    <div class="hours-card reveal reveal-right">
       <h3>Clinic Hours</h3>
       <ul>
         <li><span>Monday – Saturday</span><strong>8:00 AM – 8:00 PM</strong></li>
@@ -951,7 +976,7 @@
 <section class="appointment" id="appointment">
   <div class="wrap">
     <div class="appt-grid">
-      <div class="appt-photo">
+      <div class="appt-photo reveal reveal-left">
         <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1200&q=75" alt="Nurse checking a patient's blood pressure at the clinic">
         <div class="appt-photo-overlay"></div>
         <div class="appt-quote">
@@ -966,7 +991,7 @@
         </div>
       </div>
 
-      <div class="appt-form-card">
+      <div class="appt-form-card reveal reveal-right" style="transition-delay:.1s">
         <span class="eyebrow">BOOK A VISIT</span>
         <h2>Schedule your lab test</h2>
         <p class="appt-lede">Send us your details and preferred schedule — our staff will call or text to confirm your appointment.</p>
@@ -1030,11 +1055,11 @@
 <!-- CTA band -->
 <section class="cta-band" id="contact">
   <div class="wrap">
-    <div>
+    <div class="reveal reveal-left">
       <h2>Ready for your test results?</h2>
       <p>Call ahead or walk in — our team at Casia St., Brgy. 08, Tuburan is ready to help.</p>
     </div>
-    <div class="btns">
+    <div class="btns reveal reveal-right" style="transition-delay:.1s">
       <a href="tel:+639235184741" class="btn btn-yellow">Call 0923 518 4741</a>
       <a href="#services" class="btn" style="background:#fff;color:var(--blue-dark);box-shadow:0 4px 0 rgba(0,0,0,.15);">See All Tests</a>
     </div>
@@ -1043,7 +1068,7 @@
 
 <!-- Footer -->
 <footer>
-  <div class="wrap foot-grid">
+  <div class="wrap foot-grid reveal">
     <div class="foot-brand">
       <div class="brand">
         <div class="mark">
@@ -1119,6 +1144,25 @@
       apptForm.hidden = false;
       formSuccess.hidden = true;
     });
+  }
+
+  // Scroll-triggered reveal animations
+  const revealEls = document.querySelectorAll('.reveal');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReduced || !('IntersectionObserver' in window)) {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  } else {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+    revealEls.forEach(el => revealObserver.observe(el));
   }
 </script>
 
